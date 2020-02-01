@@ -1,6 +1,7 @@
 # DB設計
 
 ## usersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
@@ -13,6 +14,7 @@
 - has_many :messages
 
 ## groupsテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -25,6 +27,7 @@
 - 
 
 ## messagesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
@@ -37,6 +40,7 @@
 - belongs_to :user
 
 ## groups_usersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
