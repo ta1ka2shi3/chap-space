@@ -1,0 +1,24 @@
+.chat-side
+  .sidebar
+    .side-header
+      .side-header__top
+        .side-header__top__name
+          ユーザーネーム
+        %ul.side-header__top__icon
+          %li.side-header__top__edit
+            = link_to "#" do
+              = icon('fas', 'edit')
+          %li.side-header__top__cog
+            = link_to "#" do
+              = icon('fas', 'cog')
+    .groups
+      .group
+        .group__name
+          スティーブ
+        .group__message
+          スターク
+      .group
+        .group__name
+          ナターシャ
+        .group__message
+          バートンン
