@@ -6,19 +6,16 @@
           = current_user.name
         %ul.side-header__top__icon
           %li.side-header__top__edit
-            = link_to "#" do
+            = link_to new_group_path do
               = icon('fas', 'edit')
           %li.side-header__top__cog
             = link_to edit_user_path(current_user) do
               = icon('fas', 'cog')
     .groups
-      .group
-        .group__name
-          スティーブ
-        .group__message
-          スターク
-      .group
-        .group__name
-          ナターシャ
-        .group__message
-          バートン
+      - current_user.groups.each do |group|
+        .group
+          = link_to "#" do
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません
