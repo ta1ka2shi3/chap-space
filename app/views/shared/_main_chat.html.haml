@@ -3,39 +3,25 @@
     .main-header
       .main-header__left-box
         %h2.main-header__groups
-          アイアンマン
+          = @group.name
         %ul.main-header__member--lists
           %li.main-header__member--list
-            test :
+            member
           %li.main-header__member--name
-            takashi
+            = current_user.name
       .main-header__right--box
-        =link_to "Edit","#", data: { confirm: "本当に削除しますか？" }
+        =link_to "編集", edit_group_path(@group)
     .main-messages
       .main-messages__post
         .messages
-          .messages-info
-            %p.info_current
-              崇
-            %p.content
-              2020.02.08
-          .messages-texts
-            %p.text
-              アベンジャーズ
-        .messages
-          .messages-info
-            %p.info_current
-              たかなり
-            %p.content
-              2020.02.09
-          .messages-texts
-            %p.text
-              シビルウォー
+          = render @messages
     .main-message__form
-      %form
-        .text-area
-          %input.form{type: "text", name: "text", placeholder: "type a message"}
-          %label{class: "input-box__image"}
-            = icon('fas', 'image')
-            %input{type: "file", class: "input-box__image-text"}
-        %input.submit{type: "submit", value: "送信"}
+      .text-area
+        = form_for [@group, @message] do |f|
+          .form
+            = f.text_field :content, class: 'new_mwssage', placeholder: 'type a message'
+            .input-box
+              = f.label :image, class: 'input-box__image' do
+                = icon('fas', 'image')
+                = f.file_field :image, class: 'input-box__image-text'
+          = f.submit '送信', class: 'submit'
