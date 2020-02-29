@@ -1,10 +1,11 @@
-.messages-info
-  %p.info_current
-    = message.user.name
-  %p.content
-    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-.messages-texts
-  - if message.content.present?
-    %p.text
-      = message.content
-  = image_tag message.image.url, class: 'imagedesu' if message.image.present?
+.messages-box
+  .messages-info
+    %p.info_current
+      = message.user.name
+    %p.content
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .messages-texts
+    - if message.content.present?
+      %p.text
+        = message.content
+    = image_tag message.image.url, class: 'imagedesu' if message.image.present?
