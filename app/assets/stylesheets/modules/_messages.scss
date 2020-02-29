@@ -113,26 +113,29 @@ $siro: #ffffff;
         &__post {
           padding: 35px 40px 0 40px;
           height: 100%;
+          overflow: scroll;
           .messages {
             margin-bottom: 46px;
-            .messages-info {
-              display: flex;
-              margin-bottom: 12px;
-              p.info-current {
-                color: #333333;
-                font-size: 16px;
+            .messages-box{
+              .messages-info {
+                display: flex;
+                margin-bottom: 12px;
+                p.info-current {
+                  color: #333333;
+                  font-size: 16px;
+                }
+                p.content {
+                  color: #999999;
+                  font-size: 12px;
+                  padding-left: 5px;
+                }
               }
-              p.content {
-                color: #999999;
-                font-size: 12px;
-                padding-left: 5px;
-              }
-            }
-            .messages-texts {
-              padding-bottom: 12px;
-              p.text {
-                color: #434A54;
-                font-size: 14px;
+              .messages-texts {
+                padding-bottom: 12px;
+                p.text {
+                  color: #434A54;
+                  font-size: 14px;
+                }
               }
             }
           }
