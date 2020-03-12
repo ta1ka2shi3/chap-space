@@ -11,7 +11,7 @@
             - @group.users.each do |user|
               = user.name
       .main-header__right--box
-        =link_to "編集", edit_group_path(@group)
+        =link_to "Edit", edit_group_path(@group)
     .main-messages
       .main-messages__post
         .messages
@@ -25,4 +25,4 @@
               = f.label :image, class: 'input-box__image' do
                 = icon('fas', 'image')
                 = f.file_field :image, class: 'input-box__image-text'
-          = f.submit '送信', class: 'submit'
+          = f.submit 'Send', class: 'submit'
